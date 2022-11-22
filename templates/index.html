@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <!-- Basic -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">   
+   
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+ 
+     <!-- Site Metas -->
+    <title>Real Estate</title>  
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Site Icons -->
+    <link rel="shortcut icon" href="static/images/favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="static/images/apple-touch-icon.png">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="static/css/bootstrap.min.css">
+    <!-- Site CSS -->
+    <link rel="stylesheet" href="static/style.css">
+    <!-- Colors CSS -->
+    <link rel="stylesheet" href="static/css/colors.css">
+    <!-- ALL VERSION CSS -->
+    <link rel="stylesheet" href="static/css/versions.css">
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="static/css/responsive.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="static/css/custom.css">
+
+    <!-- Modernizer for Portfolio -->
+    <script src="static/js/modernizer.js"></script>
+
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+<body class="realestate_version">
+
+    <!-- LOADER -->
+    <div id="preloader">
+        <span class="loader"><span class="loader-inner"></span></span>
+    </div><!-- end loader -->
+    <!-- END LOADER -->
+
+    <header class="header header_style_01">
+        <nav class="megamenu navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="index.html"><img src="static/images/logos/logo.png" alt="image"></a>
+                </div>
+                <div id="navbar" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a class="active" href="{{ url_for('home_page') }}">Home</a></li>
+                        
+                        
+                        
+                        <li><a href="{{ url_for('gallery_page') }}">Gallery </a></li>
+                        <li><a href="{{ url_for('about_page') }}">About Us</a></li>
+                        <li><a href="{{ url_for('contact_page') }}">Contact</a></li>
+                        <li class="social-links"><a href="#"><i class="fa fa-twitter global-radius"></i></a></li>
+                        <li class="social-links"><a href="#"><i class="fa fa-facebook global-radius"></i></a></li>
+                        <li class="social-links"><a href="#"><i class="fa fa-linkedin global-radius"></i></a></li>
+						<li class="search-option">
+							<button class="search tran3s dropdown-toggle" id="searchDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-search" aria-hidden="true"></i></button>
+							<form action="#" class="p-color-bg dropdown-menu tran3s" aria-labelledby="searchDropdown">
+								<input type="text" placeholder="Search....">
+								<button class="p-color-bg"><i class="fa fa-search" aria-hidden="true"></i></button>
+							</form>
+					   </li> 
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+	
+	<ul class='slideshow'>
+		<li>
+			<span>Summer</span>
+		</li>
+		<li>		
+			<span>Fall</span>
+		</li>
+		<li>		
+			<span>Winter</span>
+		</li>
+		<li>
+			<span>Spring</span>
+		</li>
+	</ul>
+	
+    <div class="parallax first-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 wow slideInLeft hidden-xs hidden-sm">
+                    <div class="contact_form">
+                        <h3><i class="fa fa-envelope-o grd1 global-radius"></i> Enter you desired expectations</h3>
+                        <form id="contactform1" class="row" action="{{ url_for('predict')}}" method="post">
+                            <fieldset class="row-fluid">
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                    <input type="number" name="bathrooms" id="first_name1" class="form-control" placeholder="Bathrooms" required = "required">
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                    <input type="number" name="balcony" id="last_name1" class="form-control" placeholder="Balcony"  required = "required">
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                    <input type="number" name="total_sqft_int" id="email1" class="form-control" placeholder="Total Square Foot" required = "required">
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                    <input type="number" name="bhk" id="phone1" class="form-control" placeholder="BHK" required = "required">
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                    <input type="number" name="price_per_sqft" id="phone1" class="form-control" placeholder="Price Per Sqaure Foot ">
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                    <input type="text" name="area_type" id="phone1" class="form-control" placeholder="Area Type" required = "required">
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                    <input type="text" name="availability" id="phone1" class="form-control" placeholder="Availability" required = "required">
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                    <input type="text" name="location" id="phone1" class="form-control" placeholder="House Location" required>
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
+                                    <button type="submit" value="SEND" id="submit1" class="btn btn-light btn-radius btn-brd grd1 btn-block">Predict House Price</button>
+                                </div>
+                            </fieldset>
+                        </form>
+                    </center>
+    
+                    <!-- Show predicted output using ML model --> 
+                    <div>
+                        <center>
+                    <h4>{{ prediction_text }}</h4>
+                        </center>
+                    </div>
+                    </div>
+                </div>
+				<div class="col-md-6 col-sm-12">
+                    <div class="big-tagline clearfix">
+                        <h2>Sell or Buy your dream house with City Real Estate</h2>
+                        <p class="lead">Get full assistance from our liscensed dealers.</p>
+                        
+                    </div>
+                </div>
+            </div><!-- end row -->
+        </div><!-- end container -->
+    </div><!-- end section -->
+	
+	<div class="about-box">
+		<div class="container">
+			<div class="row">
+				<div class="top-feature owl-carousel owl-theme">
+					<div class="item">
+						<div class="single-feature">
+							<div class="icon"><img src="static/uploads/icon-01.png" class="img-responsive" alt=""></div>
+							<h4><a href="#">Full Furnished Houses</a></h4>
+							
+						</div> 
+					</div>
+					<div class="item">
+						<div class="single-feature">
+							<div class="icon"><img src="static/uploads/icon-02.png" class="img-responsive" alt=""></div>
+							<h4><a href="#">Living Inside a Nature</a></h4>
+							
+						</div> 
+					</div>
+					<div class="item">
+						<div class="single-feature">
+							<div class="icon"><img src="static/uploads/icon-03.png" class="img-responsive" alt=""></div>
+							<h4><a href="#">Luxurious Fittings</a></h4>
+						
+						</div> 
+					</div>
+					<div class="item">
+						<div class="single-feature">
+							<div class="icon"><img src="static/uploads/icon-04.png" class="img-responsive" alt=""></div>
+							<h4><a href="#">Non Stop Security</a></h4>
+							
+						</div> 
+					</div>
+				</div>
+			</div>
+			
+			<hr class="hr1">
+			
+			<div class="row">
+				<div class="col-md-6">
+                    <div class="post-media wow fadeIn" style="visibility: visible; animation-name: fadeIn;">
+                        <img src="static/uploads/about_bg.jpg" alt="" class="img-responsive">                        
+                    </div><!-- end media -->
+                </div>
+				<div class="col-md-6">
+					<div class="message-box right-ab">
+                        
+                        <h2>Welcome to CITY Real Estate</h2>
+                        <p>The company offers you to real world of real estate with full transparency.</p>
+						
+						
+                    </div>
+				</div>
+			</div>
+			
+		</div>
+	</div>
+
+    
+    <div id="testimonials" class="section lb">
+        <div class="container">
+            <div class="section-title row text-center">
+                <div class="col-md-8 col-md-offset-2">
+                    <h3>Happy Customers</h3>
+                    <p class="lead">More than thousand happy customers and still counting</p>
+                </div><!-- end col -->
+            </div><!-- end title -->
+
+           
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 col-sm-4 col-xs-12">
+                    <div class="widget clearfix">
+                        <div class="widget-title">
+                            <img src="static/images/logos/logo-realestate.png" alt="">
+                        </div>
+                        <p>The platform where you can get the estimate amount of your dream house and get the contacts of dealers who will help you to accomplish your dream.</p>
+                        
+                    </div><!-- end clearfix -->
+                </div><!-- end col -->
+
+                <div class="col-md-3 col-sm-3 col-xs-12">
+                    <div class="widget clearfix">
+                        <div class="widget-title">
+                            <h3>Info Link</h3>
+                        </div>
+
+                        <ul class="twitter-widget footer-links">
+                            <li><a href="index.html"> Home </a></li>
+                            
+                            
+							<li><a href="gallery.html"> Gallery</a></li>
+							
+							<li><a href="about.html">About us</a></li>
+							<li><a href="contact.html">Contact us</a></li>
+                        </ul><!-- end links -->
+                    </div><!-- end clearfix -->
+                </div><!-- end col -->
+				
+				<div class="col-md-3 col-sm-3 col-xs-12">
+                    <div class="widget clearfix">
+                        <div class="widget-title">
+                            <h3>Contact Details</h3>
+                        </div>
+
+                        <ul class="footer-links">
+                            
+                            <li><a href="#">mmalhotra_be21@thapar.edu</a></li>
+                            <li>Thapar University, Patiala</li>
+                            <li>9877214633</li>
+                        </ul><!-- end links -->
+                    </div><!-- end clearfix -->
+                </div><!-- end col -->
+				
+                <div class="col-md-2 col-sm-2 col-xs-12">
+                    <div class="widget clearfix">
+                        <div class="widget-title">
+                            <h3>Social</h3>
+                        </div>
+                        <ul class="footer-links">
+                            <li><a href="#"><i class="fa fa-facebook"></i> Facebook</a></li>
+                            <li><a href="#"><i class="fa fa-github"></i> Github</a></li>
+                            <li><a href="#"><i class="fa fa-twitter"></i> Twitter</a></li>
+                         
+                        </ul><!-- end links -->
+                    </div><!-- end clearfix -->
+                </div><!-- end col -->
+				
+            </div><!-- end row -->
+        </div><!-- end container -->
+    </footer><!-- end footer -->
+
+    <div class="copyrights">
+        <div class="container">
+            <div class="footer-distributed">
+                <div class="footer-left">
+                    <p class="footer-company-name">All Rights Reserved. &copy; 2022 <a href="#">CITY Real Estate</a></p>
+                </div>
+
+                <div class="footer-right">
+                    <form method="get" action="#">
+                        <input placeholder="Subscribe our newsletter.." name="search">
+                        <i class="fa fa-envelope-o"></i>
+                    </form>
+                </div>
+            </div>
+        </div><!-- end container -->
+    </div><!-- end copyrights -->
+
+    <a href="#" id="scroll-to-top" class="dmtop global-radius"><i class="fa fa-angle-up"></i></a>
+
+    <!-- ALL JS FILES -->
+    <script src="static/js/all.js"></script>
+    <!-- ALL PLUGINS -->
+    <script src="static/js/custom.js"></script>
+    <script src="static/js/portfolio.js"></script>
+    <script src="static/js/hoverdir.js"></script>    
+    <script src="http://maps.googleapis.com/maps/api/js?sensor=false&amp;libraries=places"></script>
+   <!-- MAP & CONTACT -->
+    <script src="static/js/map.js"></script>
+
+</body>
+</html>
